@@ -1,0 +1,13 @@
+.result-ball {
+    display: block;
+    background: black;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    margin: 0;
+    background: radial-gradient(circle at 10px 10px, #5cabff, #000);
+  }
+
+  .results-container {
+    min-height: 50px;
+  }

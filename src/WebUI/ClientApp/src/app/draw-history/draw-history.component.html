@@ -1,0 +1,83 @@
+<p-table #dt [value]="draws" dataKey="id" styleClass="p-datatable-customers" 
+    [rows]="10" [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,25,50]" [loading]="isLoading" responsiveLayout="scroll"
+    [paginator]="true" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+    [filterDelay]="0">
+    <ng-template pTemplate="caption">
+        <div class="table-header">
+            Draw History
+        </div>
+    </ng-template>
+    <ng-template pTemplate="header">
+        <tr>
+            <th pSortableColumn="drawTime">
+                <div class="flex justify-content-between align-items-center">
+                    Draw Date
+                    <p-sortIcon field="drawTime"></p-sortIcon>
+                </div>
+            </th>
+            <th pSortableColumn="firstNumber">
+                <div class="flex justify-content-between align-items-center">
+                    First Number
+                    <p-sortIcon field="firstNumber"></p-sortIcon>
+                </div>
+            </th>
+            <th pSortableColumn="secondNumber">
+                <div class="flex justify-content-between align-items-center">
+                    Second Number
+                    <p-sortIcon field="secondNumber"></p-sortIcon>
+                </div>
+            </th>
+            <th pSortableColumn="thirdNumber">
+                <div class="flex justify-content-between align-items-center">
+                    Third Number
+                    <p-sortIcon field="thirdNumber"></p-sortIcon>
+                </div>
+            </th>
+            <th pSortableColumn="fourthNumber">
+                <div class="flex justify-content-between align-items-center">
+                    Fourth Number
+                    <p-sortIcon field="fourthNumber"></p-sortIcon>
+                </div>
+            </th>
+            <th pSortableColumn="fifthNumber">
+                <div class="flex justify-content-between align-items-center">
+                    Fifth Number
+                    <p-sortIcon field="fifthNumber"></p-sortIcon>
+                </div>
+            </th>
+            <th style="width: 8rem"></th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-draw>
+        <tr class="p-selectable-row">
+            <td>
+                <span class="p-column-title">Name</span>
+                {{draw.drawTime | date: 'short'}}
+            </td>
+            <td>
+                <span class="p-column-title">Country</span>
+                {{draw.firstNumber}}
+            </td>
+            <td>
+                <span class="p-column-title">Representative</span>
+                {{draw.secondNumber}}
+            </td>    
+            <td>
+                {{draw.thirdNumber}}
+            </td>
+            <td>
+                <span class="p-column-title">Status</span>
+                {{draw.fourthNumber}}
+            </td>
+            <td>
+                <span class="p-column-title">Status</span>
+                {{draw.fifthNumber}}
+            </td>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="emptymessage">
+        <tr>
+            <td colspan="8">No draw history found.</td>
+        </tr>
+    </ng-template>
+</p-table>
